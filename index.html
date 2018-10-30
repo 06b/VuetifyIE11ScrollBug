@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body>
+  <div id="app">
+    <v-app>
+      <v-content>
+        <v-container>
+
+          <v-layout row justify-center>
+            <v-dialog v-model="dialog" scrollable width="500px">
+              <v-btn slot="activator" color="primary" dark>Open Dialog</v-btn>
+              <v-card>
+                <v-card-title>Select Country</v-card-title>
+                <v-divider></v-divider>
+                <v-card-text style="height: 300px;">
+                  <v-radio-group v-model="dialogm1" column>
+                    <v-radio label="Bahamas, The" value="bahamas"></v-radio>
+                    <v-radio label="Bahrain" value="bahrain"></v-radio>
+                    <v-radio label="Bangladesh" value="bangladesh"></v-radio>
+                    <v-radio label="Barbados" value="barbados"></v-radio>
+                    <v-radio label="Belarus" value="belarus"></v-radio>
+                    <v-radio label="Belgium" value="belgium"></v-radio>
+                    <v-radio label="Belize" value="belize"></v-radio>
+                    <v-radio label="Benin" value="benin"></v-radio>
+                    <v-radio label="Bhutan" value="bhutan"></v-radio>
+                    <v-radio label="Bolivia" value="bolivia"></v-radio>
+                    <v-radio label="Bosnia and Herzegovina" value="bosnia"></v-radio>
+                    <v-radio label="Botswana" value="botswana"></v-radio>
+                    <v-radio label="Brazil" value="brazil"></v-radio>
+                    <v-radio label="Brunei" value="brunei"></v-radio>
+                    <v-radio label="Bulgaria" value="bulgaria"></v-radio>
+                    <v-radio label="Burkina Faso" value="burkina"></v-radio>
+                    <v-radio label="Burma" value="burma"></v-radio>
+                    <v-radio label="Burundi" value="burundi"></v-radio>
+                  </v-radio-group>
+                  <v-tabs v-model="TabIndex" grow slider-color="primary" lazy>
+                    <v-tab :key="0">
+                        Small Tab
+                    </v-tab>
+                    <v-tab :key="1">
+                        Big Tab
+                    </v-tab>
+
+                    <v-tab-item :key="0">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    </v-tab-item>
+                    <v-tab-item :key="1">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sollicitudin eu sem sed rutrum. Vestibulum non sem eleifend, eleifend arcu a, porta ex. Vestibulum porttitor hendrerit enim sed lacinia. Aenean tempor id sapien ac venenatis. Integer ut convallis metus, ac sagittis odio. In dapibus nulla non ante bibendum, id laoreet nisl ornare. Vestibulum pretium ipsum id volutpat posuere. Donec tincidunt condimentum nulla, in pulvinar felis. Donec lacinia nibh ac lectus mollis, eu aliquet erat pretium. Vestibulum tristique est nunc, id ullamcorper sapien interdum ac. Quisque tempus commodo enim et imperdiet.</p>
+                    </v-tab-item>
+                </v-tabs>
+                </v-card-text>
+                <v-divider></v-divider>
+                <v-card-actions>
+                  <v-btn color="blue darken-1" flat @click.native="dialog = false">Close</v-btn>
+                  <v-btn color="blue darken-1" flat @click.native="dialog = false">Save</v-btn>
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </v-layout>
+
+        </v-container>
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@babel/polyfill@7.0.0/dist/polyfill.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.js"></script>
+  <script>
+    new Vue({ el: '#app',
+              data: {
+
+                    dialogm1: '',
+                    dialog: false,
+                    TabIndex: 0
+                  }
+          })
+  </script>
+</body>
+</html>
